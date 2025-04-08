@@ -36,6 +36,15 @@ module comp4b3o(
     output wire alb
 );      
 
+always @ (*)
+    begin
+        if (a==b) aeb = 1'b1, alb = 1'b0, agb = 1'b0;
 
+        else if (a>b) aeb = 1'b0, alb = 1'b0, agb = 1'b1;
+
+        else if (a<b) aeb = 1'b0, alb = 1'b1, agb = 1'b0;
+
+        else aeb = 1'b0, alb = 1'b0, agb = 1'b0; // default case
+    end 
 
 endmodule
