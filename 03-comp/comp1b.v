@@ -34,12 +34,15 @@ assign z = (~x & ~y) | (x & y); // XOR gate
 // XOR gate implementation using AND, OR, and NOT gates
 
 endmodule
+
+
 */
 
 
 // Gate level modelling
 
 /*
+
 module comp1b (
     input wire x,
     input wire y,
@@ -47,20 +50,38 @@ module comp1b (
 );
 
 // Gate-level implementation of (~x & ~y) | (x & y)
-wire not_x, not_y;
-wire and1_out, and2_out;
+wire nx, ny;
+wire nxandny, xandy;
 
 // NOT gates
-not not1(not_x, x);
-not not2(not_y, y);
+not NG1(nx, x);
+not NG2(ny, y);
 
 // AND gates
-and and1(and1_out, not_x, not_y);
-and and2(and2_out, x, y);
+and AND1(nxandny, nx, ny);
+and AND2(xandy, x, y);
 
 // OR gate
-or or1(z, and1_out, and2_out);
+or OR1(z, nxandny, xandy);
 
 endmodule
 
 */
+
+// Behavioural modelling
+
+module comp1b (
+    input wire x,
+    input wire y,
+    output reg z 
+);
+
+
+always @(*) 
+
+    begin
+        if (x == y) z = 1;
+        else z = 0;
+    end
+
+endmodule
