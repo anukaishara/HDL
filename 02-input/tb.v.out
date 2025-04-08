@@ -1,0 +1,51 @@
+#! /c/Source/iverilog-install/bin/vvp
+:ivl_version "12.0 (devel)" "(s20150603-1110-g18392a46)";
+:ivl_delay_selection "TYPICAL";
+:vpi_time_precision - 12;
+:vpi_module "C:\iverilog\lib\ivl\system.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_sys.vpi";
+:vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
+:vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
+:vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
+S_000001b452e188f0 .scope module, "tb" "tb" 2 4;
+ .timescale -9 -12;
+v000001b452e174e0_0 .var "a", 0 0;
+v000001b452e16ff0_0 .net "nota", 0 0, L_000001b452e17090;  1 drivers
+S_000001b452e64e40 .scope module, "uut" "mynotgate" 2 12, 3 3 0, S_000001b452e188f0;
+ .timescale -9 -12;
+    .port_info 0 /INPUT 1 "a";
+    .port_info 1 /OUTPUT 1 "nota";
+L_000001b452e17090 .functor NOT 1, v000001b452e174e0_0, C4<0>, C4<0>, C4<0>;
+v000001b452e18a80_0 .net "a", 0 0, v000001b452e174e0_0;  1 drivers
+v000001b452e1e3f0_0 .net "nota", 0 0, L_000001b452e17090;  alias, 1 drivers
+    .scope S_000001b452e188f0;
+T_0 ;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001b452e174e0_0, 0, 1;
+    %vpi_call 2 21 "$dumpfile", "dump.vcd" {0 0 0};
+    %vpi_call 2 22 "$dumpvars", 32'sb00000000000000000000000000000000, S_000001b452e188f0 {0 0 0};
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001b452e174e0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001b452e174e0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 1, 0, 1;
+    %store/vec4 v000001b452e174e0_0, 0, 1;
+    %delay 10000, 0;
+    %pushi/vec4 0, 0, 1;
+    %store/vec4 v000001b452e174e0_0, 0, 1;
+    %end;
+    .thread T_0;
+    .scope S_000001b452e188f0;
+T_1 ;
+    %vpi_call 2 34 "$monitor", "a = %b, nota = %b", v000001b452e174e0_0, v000001b452e16ff0_0 {0 0 0};
+    %end;
+    .thread T_1;
+# The file index is used to find the file name in the following table.
+:file_names 4;
+    "N/A";
+    "<interactive>";
+    "tb.v";
+    "./mynotgate.v";
