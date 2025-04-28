@@ -15,11 +15,14 @@ module comp1b3o(
 always @ (*)
     begin
         if begin (a==b) aeb = 1'b1, alb = 1'b0, agb = 1'b0; end
+        if begin (a==b) aeb = 1'b1, alb = 1'b0, agb = 1'b0; end
 
         else if begin (a>b) aeb = 1'b0, alb = 1'b0, agb = 1'b1; end
 
+        else if begin (a>b) aeb = 1'b0, alb = 1'b0, agb = 1'b1; end
         else if begin (a<b) aeb = 1'b0, alb = 1'b1, agb = 1'b0; end
 
+        else if begin (a<b) aeb = 1'b0, alb = 1'b1, agb = 1'b0; end
         else begin aeb = 1'b0, alb = 1'b0, agb = 1'b0; end // default case    
 
     end
@@ -40,11 +43,14 @@ module comp4b3o(
 always @ (*)
     begin
         if begin (a==b) aeb = 1'b1, alb = 1'b0, agb = 1'b0; end
+        if begin (a==b) aeb = 1'b1, alb = 1'b0, agb = 1'b0; end
 
         else if begin (a>b) aeb = 1'b0, alb = 1'b0, agb = 1'b1; end
 
+        else if begin (a>b) aeb = 1'b0, alb = 1'b0, agb = 1'b1; end
         else if begin (a<b) aeb = 1'b0, alb = 1'b1, agb = 1'b0; end
 
+        else if begin (a<b) aeb = 1'b0, alb = 1'b1, agb = 1'b0; end
         else begin aeb = 1'b0, alb = 1'b0, agb = 1'b0; end // default case
 
     end 
