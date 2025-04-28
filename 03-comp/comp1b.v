@@ -1,14 +1,10 @@
     // RTL modelling
 
-
-/*
 module comp1b (
     input wire a,
     input wire b,
     output wire c 
 );
-
-
 
 wire x, y, p, q; // Internal wires
 // Internal signals for the gates
@@ -20,28 +16,28 @@ assign q = a & b; // AND gate
 assign c = p | q; // OR gate
 
 endmodule
-*/
 
 
-/*
+
+
+// RTL modelling another way
+
 module comp1b (
     input wire x,
     input wire y,
     output wire z 
 );
 
-assign z = (~x & ~y) | (x & y); // XOR gate
-// XOR gate implementation using AND, OR, and NOT gates
+assign z = (~x & ~y) | (x & y);
 
 endmodule
 
 
-*/
+
 
 
 // Gate level modelling
 
-/*
 
 module comp1b (
     input wire x,
@@ -54,7 +50,7 @@ wire nx, ny;
 wire nxandny, xandy;
 
 // NOT gates
-not NG1(nx, x);
+not NG1(nx, x); // Gate_category Gate_name(input, output)
 not NG2(ny, y);
 
 // AND gates
@@ -66,7 +62,7 @@ or OR1(z, nxandny, xandy);
 
 endmodule
 
-*/
+
 
 // Behavioural modelling
 
@@ -80,8 +76,12 @@ module comp1b (
 always @(*) 
 
     begin
-        if (x == y) z = 1;
-        else z = 0;
+        if (x == y) begin 
+            z = 1;
+        end
+        else begin
+            z = 0;
+        end
     end
 
 endmodule

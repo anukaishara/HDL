@@ -15,11 +15,13 @@ always @(*) begin
         out_alb = 1'b0;
         out_aeb = 1'b0;
     end
+    
     else if (A < B) begin
         out_agb = 1'b0;
         out_alb = 1'b1;
         out_aeb = 1'b0;
     end
+
     else begin // A == B
         out_agb = in_agb;
         out_alb = in_alb;
