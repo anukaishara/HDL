@@ -1,3 +1,5 @@
+// Description: D Latch 1 Bit
+
 module d_latch_1b (
     input wire d, 
     input wire en,
