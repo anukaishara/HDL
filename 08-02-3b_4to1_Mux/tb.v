@@ -45,6 +45,9 @@ module tb();
     initial begin
         $monitor("Time=%0t | en=%b se=%b | a=%b b=%b c=%b d=%b | y=%b", 
                  $time, en, se, a, b, c, d, y);
+                 // here the | is used to separate the different signals in the output
+                 // There is no any meaning of | in this context, it is just a separator
+                 // you can use any other character or string like a comma, a space to separate the signals
     end
 
 endmodule

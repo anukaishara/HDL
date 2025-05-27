@@ -50,7 +50,7 @@ wire nx, ny;
 wire nxandny, xandy;
 
 // NOT gates
-not NG1(nx, x); // Gate_category Gate_name(input, output)
+not NG1(nx, x); // Gate_category Gate_name(output, input)
 not NG2(ny, y);
 
 // AND gates

@@ -4,12 +4,15 @@
 // aeb = a equal b
 // agb = a greater than b
 // alb = a less than b
+
 module comp1b3o(
     input wire a,
     input wire b,
     output reg aeb,
     output reg agb,
     output reg alb
+    // Here the outputs are declared as registers
+    // because they are assigned values in an always block
 );
 
 always @ (*)
@@ -35,6 +38,8 @@ always @ (*)
 
 endmodule
 
+
+
 // Comparator 4 bit input 3 outputs
 
 module comp4b3o(
@@ -48,7 +53,7 @@ module comp4b3o(
 always @ (*)
     begin
         if (a==b) begin
-            aeb = 1'b1, alb = 1'b0, agb = 1'b0;
+            aeb = 1'b1, alb = 1'b0, agb = 1'b0; 
         end
 
         else if  (a>b) begin 

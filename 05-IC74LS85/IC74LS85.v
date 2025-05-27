@@ -26,6 +26,12 @@ always @(*) begin
         out_agb = in_agb;
         out_alb = in_alb;
         out_aeb = in_aeb;
+
+        // In a cascaded configuration, at the first stage, where there is no previous stage,
+        // the inputs in_agb, in_alb are set to 0 and in_aeb is set to 1.
+        // Since in A == B state, the outputs will be set to the previous stage's outputs.
+        // But the first stage actually has no inputs, so we set aeb to 1, agb and alb to 0.
+        // This is the default state for the first stage to cascade without any incorrect outputs.
     end
 end
 

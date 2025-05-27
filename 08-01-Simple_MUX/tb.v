@@ -40,6 +40,9 @@ module tb();
 
     initial begin
         $monitor("Time=%0t | a=%b b=%b se=%b en=%b | y=%b", $time, a, b, se, en, y);
+        // %b is used to print binary values
+        // $time gives the current simulation time
+        // %0t formats the time as a time value
     end
 
 endmodule
