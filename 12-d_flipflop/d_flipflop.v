@@ -46,6 +46,13 @@ always @ (posedge clk or posedge rst) begin // Sensitivity list
     else if (en) begin
         q <= d; // If enable is high, output follows input
         
+         
+    end
+
+end
+
+endmodule
+
         
         /* 
         
@@ -65,9 +72,3 @@ always @ (posedge clk or posedge rst) begin // Sensitivity list
             z <= x; // z will be 3
 
          */
-         
-    end
-
-end
-
-endmodule

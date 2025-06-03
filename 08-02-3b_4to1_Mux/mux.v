@@ -9,15 +9,11 @@ module mux_3b_4to1(
     output reg [2:0] y
     // here output is declared as reg because we will assign it in an always block
 );
-
-
 //assign y = en ? (se[1] ? (se[0] ? d : c) : (se[0] ? b : a)) : 3'bzzz; 
 // output variable type should be wire when using assign statement
 // output is zero when enable is low
 
-
 // alternative implementation using always block    
-
 always @(*) begin
     if (en) begin
         case (se)

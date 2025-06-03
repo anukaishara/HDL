@@ -2,8 +2,8 @@ module divide_by3fsm (
     input reset,
     input clk,
     output y,
-    output [2:0] state,      // Add this line
-    output [2:0] nextstate   // Add this line
+    output [2:0] state,      
+    output [2:0] nextstate   
 );
 
 reg [2:0] state_reg, nextstate_reg;
